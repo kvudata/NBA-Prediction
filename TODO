@@ -1,0 +1,3 @@
+- Right now the Rails model is pretty broken...should setup appropriate
+relationships so can ActiveRecord objects instead of directly interacting with
+db

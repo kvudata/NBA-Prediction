@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111127134426) do
+ActiveRecord::Schema.define(:version => 20111209000222) do
 
   create_table "games", :force => true do |t|
     t.date     "play_date"
@@ -22,11 +22,42 @@ ActiveRecord::Schema.define(:version => 20111127134426) do
     t.boolean  "is_overtime"
     t.integer  "team1_pts"
     t.integer  "team2_pts"
+    t.integer  "curr_season_stats_id"
+    t.integer  "prev_season_stats_id"
+    t.integer  "stats_since_09_id"
   end
 
   create_table "games_teams", :id => false, :force => true do |t|
     t.integer "game_id", :null => false
     t.integer "team_id", :null => false
+  end
+
+  add_index "games_teams", ["game_id", "team_id"], :name => "index_games_teams_on_game_id_and_team_id", :unique => true
+
+  create_table "season_stats", :force => true do |t|
+    t.float    "pace_avg"
+    t.float    "efg_avg"
+    t.float    "tov_perc_avg"
+    t.float    "orb_perc_avg"
+    t.float    "ft_per_fga"
+    t.float    "ortg_avg"
+    t.integer  "fg_total"
+    t.integer  "fga_total"
+    t.integer  "three_pt_total"
+    t.integer  "three_pta_total"
+    t.integer  "ft_total"
+    t.integer  "fta_total"
+    t.float    "orb_avg"
+    t.float    "drb_avg"
+    t.float    "trb_avg"
+    t.float    "ast_avg"
+    t.float    "stl_avg"
+    t.float    "blk_avg"
+    t.float    "tov_avg"
+    t.float    "pf_avg"
+    t.float    "ppg"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "teams", :force => true do |t|

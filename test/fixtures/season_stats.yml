@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pace_avg: 1.5
+  efg_avg: 1.5
+  tov_perc_avg: 1.5
+  orb_perc_avg: 1.5
+  ft_per_fga: 1.5
+  ortg_avg: 1.5
+  fg_total: 
+  fga_total: 
+  three_pt_total: 
+  three_pta_total: 
+  ft_total: 
+  fta_total: 
+  orb_avg: 1.5
+  drb_avg: 1.5
+  trb_avg: 1.5
+  ast_avg: 1.5
+  stl_avg: 1.5
+  blk_avg: 1.5
+  tov_avg: 1.5
+  pf_avg: 1.5
+  ppg: 1.5
+  game: 
+
+two:
+  pace_avg: 1.5
+  efg_avg: 1.5
+  tov_perc_avg: 1.5
+  orb_perc_avg: 1.5
+  ft_per_fga: 1.5
+  ortg_avg: 1.5
+  fg_total: 
+  fga_total: 
+  three_pt_total: 
+  three_pta_total: 
+  ft_total: 
+  fta_total: 
+  orb_avg: 1.5
+  drb_avg: 1.5
+  trb_avg: 1.5
+  ast_avg: 1.5
+  stl_avg: 1.5
+  blk_avg: 1.5
+  tov_avg: 1.5
+  pf_avg: 1.5
+  ppg: 1.5
+  game: 
