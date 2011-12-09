@@ -11,7 +11,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111209000222) do
+ActiveRecord::Schema.define(:version => 20111209050842) do
+
+  create_table "game_stats", :force => true do |t|
+    t.float    "pace"
+    t.float    "efg"
+    t.float    "tov_perc"
+    t.float    "orb_perc"
+    t.float    "ft_per_fga"
+    t.float    "ortg"
+    t.integer  "fg"
+    t.integer  "fga"
+    t.integer  "three_pt"
+    t.integer  "three_pta"
+    t.integer  "ft"
+    t.integer  "fta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "fg_perc"
+    t.float    "three_pt_perc"
+    t.float    "ft_perc"
+    t.integer  "orb"
+    t.integer  "drb"
+    t.integer  "trb"
+    t.integer  "ast"
+    t.integer  "stl"
+    t.integer  "blk"
+    t.integer  "tov"
+    t.integer  "pf"
+    t.integer  "pts"
+  end
 
   create_table "games", :force => true do |t|
     t.date     "play_date"
@@ -20,44 +49,10 @@ ActiveRecord::Schema.define(:version => 20111209000222) do
     t.integer  "winner_id"
     t.integer  "home_team_id"
     t.boolean  "is_overtime"
-    t.integer  "team1_pts"
-    t.integer  "team2_pts"
-    t.integer  "curr_season_stats_id"
-    t.integer  "prev_season_stats_id"
-    t.integer  "stats_since_09_id"
-  end
-
-  create_table "games_teams", :id => false, :force => true do |t|
-    t.integer "game_id", :null => false
-    t.integer "team_id", :null => false
-  end
-
-  add_index "games_teams", ["game_id", "team_id"], :name => "index_games_teams_on_game_id_and_team_id", :unique => true
-
-  create_table "season_stats", :force => true do |t|
-    t.float    "pace_avg"
-    t.float    "efg_avg"
-    t.float    "tov_perc_avg"
-    t.float    "orb_perc_avg"
-    t.float    "ft_per_fga"
-    t.float    "ortg_avg"
-    t.integer  "fg_total"
-    t.integer  "fga_total"
-    t.integer  "three_pt_total"
-    t.integer  "three_pta_total"
-    t.integer  "ft_total"
-    t.integer  "fta_total"
-    t.float    "orb_avg"
-    t.float    "drb_avg"
-    t.float    "trb_avg"
-    t.float    "ast_avg"
-    t.float    "stl_avg"
-    t.float    "blk_avg"
-    t.float    "tov_avg"
-    t.float    "pf_avg"
-    t.float    "ppg"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "team1_id"
+    t.integer  "team2_id"
+    t.integer  "team1_stats_id"
+    t.integer  "team2_stats_id"
   end
 
   create_table "teams", :force => true do |t|
